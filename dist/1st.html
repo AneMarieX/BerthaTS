@@ -59,9 +59,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   
    
-    <input id="addPressure" placeholder="Blod Pressure"type="number"/>
-    <input id="addPulse" placeholder="Pulse" type="number"/>
-    <input id="addTemp" placeholder="Temperature" type="number" />
+    <input id="addPressure" placeholder="Blod Pressure" type="number" min="60"/>
+    <input id="addPulse" placeholder="Pulse" type="number" min="90" />
+    <input id="addTemp" placeholder="Temperature" type="number" min="36"/>
+
     <button onclick="getLocation()">Get Location</button>
 
     <p id="demo"></p>
