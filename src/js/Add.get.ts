@@ -118,7 +118,22 @@ function showAllLocations ():void{
 }
 
 function showAllUsers ():void{
-    let uri:string ="http://localhost:44378/api/users";
+    let uri:string ="http://localhost:44378/api/userInfo";
     const newLocal = outputElement.innerHTML;
    
+}
+function addUser(): void {
+    let addPresureElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addPresure");
+    let addPulseElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addPulse");
+    let addTempElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addTemp");
+    let addLocationElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addLocation");
+    let myPresure: number =  Number(addPresureElement.value);
+    let myPulse: number =  Number(addPulseElement.value);
+    let myTemp: number = Number(addTempElement.value);
+    let myLoc: number = Number(addLocationElement.value);
+
+    let uri: string = "http://localhost:44378/api/userInfo";
+    axios.post<IUser>(uri, { pulse: myPulse, pressure: myPresure, temp: myTemp, location: myLoc })
+        .then((response: AxiosResponse) => { console.log("response " + response.status + " " + response.statusText); })
+        .catch((error: AxiosError) => { console.log(error); });
 }
