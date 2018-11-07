@@ -2056,7 +2056,7 @@ function showAllLocations() {
         .then(function (response) {
         var result = "<ol>";
         response.data.forEach(function (loc) {
-            result += "<li>" + loc.latitude + " " + loc.longitude + "</li>";
+            result += "<li>" + loc.name + loc.latitude + " " + loc.longitude + "</li>";
         });
         result += "</ol>";
     })
@@ -2068,6 +2068,10 @@ function showAllLocations() {
             error;
         }
     });
+}
+function showAllUsers() {
+    var uri = "http://localhost:44378/api/users";
+    var newLocal = outputElement.innerHTML;
 }
 
 

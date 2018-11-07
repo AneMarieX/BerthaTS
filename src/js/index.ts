@@ -24,9 +24,12 @@ interface IAir{
 }
 
 interface ILoc{
+    name: string;
     longitude : number;
     latitude : number;
 }
+
+
  
  
 
@@ -98,7 +101,7 @@ function showAllLocations ():void{
           
             let result: string = "<ol>";
             response.data.forEach((loc: ILoc) => {
-                result += "<li>" + loc.latitude + " " + loc.longitude + "</li>" ;
+                result += "<li>" + loc.name+ loc.latitude + " " + loc.longitude + "</li>" ;
             });
             result += "</ol>";
          
@@ -112,4 +115,10 @@ function showAllLocations ():void{
             }
         });
 
+}
+
+function showAllUsers ():void{
+    let uri:string ="http://localhost:44378/api/users";
+    const newLocal = outputElement.innerHTML;
+   
 }
