@@ -26,33 +26,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="index.htm" class="w3-bar-item w3-button w3-theme-l1">The Project</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Air Condition</a>
-    <a href="1st.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Users</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">The Team</a>
+    <a href="index.htm" class="w3-bar-item w3-button w3-theme-l1">The Project</a>  
+    <a href="AllAirQuality.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Air Quality</a>
+    <a href="AllUsers.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Users</a> 
+    <a href="AllLocations.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Locations</a>
+    <a href="1st.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Add Info</a>
+    <a href="Scientist.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Scientist</a>
  
   </div>
 </div>
 
-<!-- Sidebar -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <h4 class="w3-bar-item"><b>Menu</b></h4>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Users</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="AllAirCondition.html">Air Condition</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="AllLocation.html">Locations</a>
 
-</nav>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px"></div>
 
 <div class="w3-row w3-padding-64">
   <div class="w3-twothird w3-container">
@@ -62,6 +47,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 
     <h4>Members Area</h4>
+   
     <input id="Username" placeholder="Username"type="charset" />
     <input id="Password" placeholder="Password" type="password"/>
     <button id="Submit">Submit</button>
@@ -70,21 +56,27 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">About </h1>
-      <p>Our project is an environmental and health study. Our customer is the Department of Environmental Science. We are the IT team who helped developing this product.</p>
+      <p>Our project is an environmental and health study. </p>
+      <p>Our customer is the Department of Environmental Science.</p>
+      <p> We are the IT team who helped developing this product.</p>
     </div>
    
   </div>
 
   
-   
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <!-- Pagination -->
   <div class="w3-center w3-padding-32">
     <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
+      <a class="w3-button w3-black" href="index.htm">1</a>
+      <a class="w3-button w3-hover-black" href="AllLocations.html">2</a>
+      <a class="w3-button w3-hover-black" href="AllUsers.html">3</a>
+      <a class="w3-button w3-hover-black" href="Scientist.html">4</a>
     
     </div>
   </div>
@@ -99,33 +91,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     </div>
   </footer>
 
-<!-- END MAIN -->
+
 </div>
 
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
 
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
-    }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-}
-</script>
 <script src="bundle.js"></script>
 
 </body>
