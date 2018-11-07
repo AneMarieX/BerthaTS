@@ -2004,6 +2004,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var buttonElement = document.getElementById("getAllButton");
 buttonElement.addEventListener("click", showAllInfos);
+var buttonElement1 = document.getElementById("getAllButton");
+buttonElement1.addEventListener("click", showAllAir);
+var buttonElement2 = document.getElementById("getAllButton");
+buttonElement2.addEventListener("click", showAllLocations);
 var outputElement = document.getElementById("content");
 var buttonDeleteElement = document.getElementById("deleteButton");
 function showAllInfos() {
@@ -2024,6 +2028,46 @@ function showAllInfos() {
     //         outputElement.innerHTML = error;
     //     }
     // });
+}
+function showAllAir() {
+    var uri = "http://localhost:44378/api/airlog";
+    var newLocal = outputElement.innerHTML;
+    _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get(uri)
+        .then(function (response) {
+        var result = "<ol>";
+        response.data.forEach(function (air) {
+            result += "<li>" + air.quality + " " + air.CO + "</li>" + air.NO2 + air.SO2;
+        });
+        result += "</ol>";
+    })
+        .catch(function (error) {
+        if (error.response) {
+            error;
+        }
+        else {
+            error;
+        }
+    });
+}
+function showAllLocations() {
+    var uri = "http://localhost:44378/api/locations";
+    var newLocal = outputElement.innerHTML;
+    _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get(uri)
+        .then(function (response) {
+        var result = "<ol>";
+        response.data.forEach(function (loc) {
+            result += "<li>" + loc.latitude + " " + loc.longitude + "</li>";
+        });
+        result += "</ol>";
+    })
+        .catch(function (error) {
+        if (error.response) {
+            error;
+        }
+        else {
+            error;
+        }
+    });
 }
 
 
