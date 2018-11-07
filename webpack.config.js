@@ -71,5 +71,17 @@ module.exports = {
       index: 'index.htm',
       server: { baseDir: ['dist'] }
     })
-  ]
+  ],
+  entry: {
+    Test: './src/js/Test.ts',
+    Interfaces: './src/js/DBInterfaces.ts', 
+    CookiesHandler: './src/js/CookiesHandler.ts'
+  },
+  output: {
+    
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist/scripts/'),
+    publicPath: './dist/scripts/'
+  }
+
 };

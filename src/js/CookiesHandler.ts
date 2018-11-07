@@ -21,7 +21,7 @@ import axios, {
     }
 
     export function DeleteCookie(name:string){
-        document.cookie = "UPSID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = name+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
     export function GetCookie(cname:string) {
         var name = cname + "=";
