@@ -6,3 +6,5 @@
 .vscode
 .eslintcache
 package-lock.json
+test.html
+Test.ts
