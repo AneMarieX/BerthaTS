@@ -75,7 +75,8 @@ module.exports = {
   entry: {
     Test: './src/js/Test.ts',
     Interfaces: './src/js/DBInterfaces.ts', 
-    CookiesHandler: './src/js/CookiesHandler.ts'
+    CookiesHandler: './src/js/CookiesHandler.ts',
+    UserLogIn: './src/js/UserLogIn.ts'
   },
   output: {
     

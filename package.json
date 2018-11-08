@@ -27,6 +27,7 @@
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
-    "jshint": "^2.9.6"
+    "jshint": "^2.9.6",
+    "password-hash": "^1.2.2"
   }
 }
