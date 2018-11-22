@@ -1,10 +1,11 @@
 export interface IUser {
 
     id: number;
-    name: string;
-    age:number;
+    login: string;
+    password: string;
     height:number;
     waight:number;
+    dateOfBirth:number;
     pressure: number;
     pulse: number;
     temp : number;
@@ -12,17 +13,18 @@ export interface IUser {
 
 export interface ILocationMeasurment {
     id: number;
-    LocationID: number;
-    AirCondition: string;
-    CO2: number;
-    NO2: number;
-    SO2: number;
+    locationName: string;
+    airCondition: string;
+    temperature: number;
+    pressure: number;
+    humidity: number;
     Date: Date;
 }
 
 export interface IUserMeasurment {
     id: number;
     UserID: number;
+    locationID:number;
     Date: Date;
     BloodPressure: number;
     Pulse: number;
@@ -32,6 +34,14 @@ export interface IUserMeasurment {
 
 export interface ILocation {
     id: number;
-    Location: string;
+    LocationName: string;
     Coordinates: string;
+}
+
+export interface IPiResult{
+
+    id: number;
+    temperature: number;
+    pressure: number;
+    humidity:number;
 }

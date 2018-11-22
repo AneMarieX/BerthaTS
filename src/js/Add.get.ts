@@ -1,32 +1,36 @@
 import axios, {
     AxiosResponse,
     AxiosError} from "../../node_modules/axios/index";
+import { IUserMeasurment } from "./DBInterfaces";
 
 interface IUser {
 
     id: number;
-    name: string;
-    age:number;
+    login: string;
+    password: string;
     height:number;
     waight:number;
+    dateOfBirth:number;
     pressure: number;
     pulse: number;
     temp : number;
 }
 
-interface IAir{
-    quality : string;
-    CO: number;
-    NO2: number;
-    SO2: number;
-
+ interface ILocationMeasurment {
+    id: number;
+    locationName: string;
+    airCondition: string;
+    temperature: number;
+    pressure: number;
+    humidity: number;
+    Date: Date;
 
 }
 
-interface ILoc{
-    name: string;
-    longitude : number;
-    latitude : number;
+interface ILocation {
+    id: number;
+    LocationName: string;
+    Coordinates: string;
 }
 
 
@@ -73,12 +77,12 @@ function showAllInfos(): void {
 function showAllAir ():void{
     let uri:string ="http://localhost:44378/api/airlog";
     const newLocal = outputElement.innerHTML;
-    axios.get<IAir[]>(uri)
-        .then(function (response: AxiosResponse<IAir[]>): void {
+    axios.get<ILocationMeasurment[]>(uri)
+        .then(function (response: AxiosResponse<ILocationMeasurment[]>): void {
           
             let result: string = "<ol>";
-            response.data.forEach((air: IAir) => {
-                result += "<li>" + air.quality + " " + air.CO + "</li>" + air.NO2 + air.SO2;
+            response.data.forEach((air: ILocationMeasurment) => {
+                result += "<li>" + air.id + " " + air.locationName + "</li>" + air.airCondition + air.temperature + air.pressure + air.humidity + air.Date;
             });
             result += "</ol>";
          
@@ -96,12 +100,12 @@ function showAllAir ():void{
 function showAllLocations ():void{
     let uri:string ="http://localhost:44378/api/locations";
     const newLocal = outputElement.innerHTML;
-    axios.get<ILoc[]>(uri)
-        .then(function (response: AxiosResponse<ILoc[]>): void {
+    axios.get<ILocation[]>(uri)
+        .then(function (response: AxiosResponse<ILocation[]>): void {
           
             let result: string = "<ol>";
-            response.data.forEach((loc: ILoc) => {
-                result += "<li>" + loc.name+ loc.latitude + " " + loc.longitude + "</li>" ;
+            response.data.forEach((loc: ILocation) => {
+                result += "<li>" + loc.LocationName+ loc.LocationName + " " + loc.Coordinates + "</li>" ;
             });
             result += "</ol>";
          

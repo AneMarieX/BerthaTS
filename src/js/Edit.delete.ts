@@ -5,10 +5,11 @@ import axios, {
 interface IUser {
 
     id: number;
-    name: string;
-    age:number;
+    login: string;
+    password: string;
     height:number;
     waight:number;
+    dateOfBirth:number;
     pressure: number;
     pulse: number;
     temp : number;
