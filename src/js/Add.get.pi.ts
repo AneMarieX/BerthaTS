@@ -4,31 +4,30 @@ import axios, {
 import { IUserMeasurment, IUser, ILocationMeasurment, ILocation, IPiResult } from "./DBInterfaces";
 
 
- 
+
+ let buttonElement: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllAir");
+ buttonElement.addEventListener("click", ShowAllAir);
 
 
 
-let buttonElement2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllLoc");
- buttonElement2.addEventListener("click", showAllLocations);
-
-let outputElement: HTMLDivElement = <HTMLDivElement>document.getElementById("showAllLocations");
-
+let outputElement: HTMLDivElement = <HTMLDivElement>document.getElementById("ShowAllAir");
 
 
 
 
-function showAllLocations ():void{
+function ShowAllAir ():void{
     let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
    
-    axios.get<ILocationMeasurment[]>(uri)
-        .then(function (response: AxiosResponse<ILocationMeasurment[]>): void {
-          
+    axios.get<IPiResult[]>(uri)
+        .then(function (response: AxiosResponse<IPiResult[]>): void {
+           
             let result: string = "<ol>";
-            response.data.forEach((loc: ILocationMeasurment) => {
-                result += "<li>" + loc.id+ loc.pressure + " " + loc.temperature+loc.humidity + "</li>" ;
+            response.data.forEach((air: IPiResult) => {
+                result += "<li>" + air.id + " " + air.temperature + air.pressure  + air.humidity + "</li>";
             });
             result += "</ol>";
-            outputElement.innerHTML = result;
+            outputElement.innerHTML= result;
+
         })
         .catch(function (error: AxiosError): void { 
             if (error.response) {
@@ -42,7 +41,3 @@ function showAllLocations ():void{
 }
 
 
-
-
-
-  

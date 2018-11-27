@@ -12,8 +12,7 @@ buttonElement1.addEventListener("click", showAllUsers);
 // let buttonElement: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllAir");
 // buttonElement.addEventListener("click", ShowAllAir);
 
-// let buttonElement2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllLoc");
-// buttonElement2.addEventListener("click", showAllLocations);
+
 
 let outputElement: HTMLDivElement = <HTMLDivElement>document.getElementById("showAllUsers");
 
@@ -68,29 +67,7 @@ function showAllUsers(): void {
 //         });
 
 // }
-// function showAllLocations ():void{
-//     let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
-//     const newLocal = outputElement.innerHTML;
-//     axios.get<ILocation[]>(uri)
-//         .then(function (response: AxiosResponse<ILocation[]>): void {
-          
-//             let result: string = "<ol>";
-//             response.data.forEach((loc: ILocation) => {
-//                 result += "<li>" + loc.LocationName+ loc.LocationName + " " + loc.Coordinates + "</li>" ;
-//             });
-//             result += "</ol>";
-//             outputElement.innerHTML = result;
-//         })
-//         .catch(function (error: AxiosError): void { 
-//             if (error.response) {
-         
-//               error;
-//             } else {
-//                error;
-//             }
-//         });
 
-// }
 
 
 

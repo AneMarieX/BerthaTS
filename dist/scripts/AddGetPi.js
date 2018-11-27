@@ -1991,16 +1991,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/axios/index */ "./node_modules/axios/index.js");
 /* harmony import */ var _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0__);
 
-var buttonElement2 = document.getElementById("getAllLoc");
-buttonElement2.addEventListener("click", showAllLocations);
-var outputElement = document.getElementById("showAllLocations");
-function showAllLocations() {
+var buttonElement = document.getElementById("getAllAir");
+buttonElement.addEventListener("click", ShowAllAir);
+var outputElement = document.getElementById("ShowAllAir");
+function ShowAllAir() {
     var uri = "https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
     _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get(uri)
         .then(function (response) {
         var result = "<ol>";
-        response.data.forEach(function (loc) {
-            result += "<li>" + loc.id + loc.pressure + " " + loc.temperature + loc.humidity + "</li>";
+        response.data.forEach(function (air) {
+            result += "<li>" + air.id + " " + air.temperature + air.pressure + air.humidity + "</li>";
         });
         result += "</ol>";
         outputElement.innerHTML = result;
