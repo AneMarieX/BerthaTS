@@ -25,8 +25,8 @@ function deleteUser(): void {
     let output: HTMLDivElement = <HTMLDivElement>document.getElementById("contentDelete");
     let inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById("deleteInput");
     let name: string = inputElement.value;
-    let uri: string = "http://localhost:44378/api/user" + name;
-    axios.delete<IUser>(uri)
+    let uri: string = "https://berthawebap20181108065629.azurewebsites.net/Api/Users" + name;
+    axios.delete(uri)
         .then(function (response: AxiosResponse<IUser>): void {
           
             console.log(JSON.stringify(response));

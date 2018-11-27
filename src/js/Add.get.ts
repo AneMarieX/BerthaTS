@@ -21,7 +21,7 @@ let buttonDeleteElement: HTMLButtonElement = <HTMLButtonElement>document.getElem
 
 
 function showAllInfos(): void {
-    let uri: string = "http://localhost:44378/api/user";
+    let uri: string = "https://berthawebap20181108065629.azurewebsites.net/Api/Users";
     const newLocal = outputElement.innerHTML;
     axios.get<IUser[]>(uri)
         .then(function (response: AxiosResponse<IUser[]>): void {
@@ -44,7 +44,7 @@ function showAllInfos(): void {
 }
 
 function showAllAir ():void{
-    let uri:string ="http://localhost:44378/api/airlog";
+    let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/LocationMeasurments";
     const newLocal = outputElement.innerHTML;
     axios.get<ILocationMeasurment[]>(uri)
         .then(function (response: AxiosResponse<ILocationMeasurment[]>): void {
@@ -67,7 +67,7 @@ function showAllAir ():void{
 
 }
 function showAllLocations ():void{
-    let uri:string ="http://localhost:44378/api/locations";
+    let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/LocationMeasurments";
     const newLocal = outputElement.innerHTML;
     axios.get<ILocation[]>(uri)
         .then(function (response: AxiosResponse<ILocation[]>): void {
@@ -91,7 +91,7 @@ function showAllLocations ():void{
 }
 
 function showAllUsers ():void{
-    let uri:string ="http://localhost:44378/api/userInfo";
+    let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/LocationMeasurments";
     const newLocal = outputElement.innerHTML;
    
 }
@@ -105,7 +105,7 @@ function addUser(): void {
     let myTemp: number = Number(addTempElement.value);
     let myLoc: number = Number(addLocationElement.value);
 
-    let uri: string = "http://localhost:44378/api/userInfo";
+    let uri: string = "https://berthawebap20181108065629.azurewebsites.net/Api/Users";
     axios.post<IUser>(uri, { pulse: myPulse, pressure: myPresure, temp: myTemp, location: myLoc })
         .then((response: AxiosResponse) => { console.log("response " + response.status + " " + response.statusText); })
         .catch((error: AxiosError) => { console.log(error); });

@@ -8,7 +8,7 @@ import * as passhashing from "../../node_modules/password-hash/lib/password-hash
 import { GetCookie, CheckCookie } from "./CookiesHandler";
 
 
-const uri: string = "https://berthawebap20181108065629.azurewebsites.net/api/users";
+const uri: string = "https://berthawebap20181108065629.azurewebsites.net/Api/Users";
 
 
 
