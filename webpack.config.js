@@ -76,7 +76,8 @@ module.exports = {
    
     Interfaces: './src/js/DBInterfaces.ts', 
     CookiesHandler: './src/js/CookiesHandler.ts',
-    AddGet: './src/js/Add.get.ts'
+    AddGet: './src/js/Add.get.ts',
+    AddGetPi:'./src/js/Add.get.pi.ts'
   },
   output: {
     
