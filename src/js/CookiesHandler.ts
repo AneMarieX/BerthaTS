@@ -11,8 +11,8 @@ import axios, {
         document.cookie = name + "=" + value + ";" + expires + ";path=/";
     }
 
-    export function CheckCookie():boolean {
-        var username = this.GetCookie("UPSID");
+    export function CheckCookie(name :string):boolean {
+        var username = this.GetCookie(name);
         if (username != "") {
            return true;
         } else {

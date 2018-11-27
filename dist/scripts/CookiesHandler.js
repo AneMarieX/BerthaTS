@@ -105,8 +105,8 @@ function CreateCookie(name, value, expiration) {
     var expires = "expires=" + d.toUTCString();
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
-function CheckCookie() {
-    var username = this.GetCookie("UPSID");
+function CheckCookie(name) {
+    var username = this.GetCookie(name);
     if (username != "") {
         return true;
     }
