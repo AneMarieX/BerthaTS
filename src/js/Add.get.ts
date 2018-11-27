@@ -1,18 +1,18 @@
 import axios, {
     AxiosResponse,
     AxiosError} from "../../node_modules/axios/index";
-import { IUserMeasurment, IUser, ILocationMeasurment, ILocation } from "./DBInterfaces";
+import { IUserMeasurment, IUser, ILocationMeasurment, ILocation, IPiResult } from "./DBInterfaces";
 
 
  
 
-let buttonElement: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllButton");
+let buttonElement: HTMLButtonElement = <HTMLButtonElement>document.getElementById("wgetAllButton");
 buttonElement.addEventListener("click", showAllInfos);
 
 let buttonElement1: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllButton");
-buttonElement1.addEventListener("click", showAllAir);
+buttonElement1.addEventListener("click", ShowAllAir);
 
-let buttonElement2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllButton");
+let buttonElement2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("ggetAllButton");
 buttonElement2.addEventListener("click", showAllLocations);
 
 let outputElement: HTMLDivElement = <HTMLDivElement>document.getElementById("content");
@@ -43,18 +43,21 @@ function showAllInfos(): void {
         // });
 }
 
-function showAllAir ():void{
-    let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/LocationMeasurments";
-    const newLocal = outputElement.innerHTML;
-    axios.get<ILocationMeasurment[]>(uri)
-        .then(function (response: AxiosResponse<ILocationMeasurment[]>): void {
-          
+function ShowAllAir ():void{
+    let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
+    console.log("asas");
+    axios.get<IPiResult[]>(uri)
+        .then(function (response: AxiosResponse<IPiResult[]>): void {
+           
             let result: string = "<ol>";
-            response.data.forEach((air: ILocationMeasurment) => {
-                result += "<li>" + air.id + " " + air.locationName + "</li>" + air.airCondition + air.temperature + air.pressure + air.humidity + air.Date;
+            response.data.forEach((air: IPiResult) => {
+                result += "<li>" + air.id + " " + air.temperature + air.pressure  + air.humidity + "</li>";
             });
             result += "</ol>";
-         
+            console.log(response);
+          
+        let outputElement2: HTMLDivElement = <HTMLDivElement>document.getElementById("ShowAllAir");
+            outputElement2.innerHTML = result;
         })
         .catch(function (error: AxiosError): void { 
             if (error.response) {
@@ -77,7 +80,7 @@ function showAllLocations ():void{
                 result += "<li>" + loc.LocationName+ loc.LocationName + " " + loc.Coordinates + "</li>" ;
             });
             result += "</ol>";
-         
+            outputElement.innerHTML = result;
         })
         .catch(function (error: AxiosError): void { 
             if (error.response) {
