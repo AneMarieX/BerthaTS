@@ -6,9 +6,7 @@ export interface IUser {
     height:number;
     waight:number;
     dateOfBirth:number;
-    pressure: number;
-    pulse: number;
-    temp : number;
+  
 }
 
 export interface ILocationMeasurment {
