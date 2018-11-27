@@ -18,7 +18,7 @@ let outputElement: HTMLDivElement = <HTMLDivElement>document.getElementById("sho
 
 
 function showAllLocations ():void{
-    let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
+    let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/LocationMeasurments";
    
     axios.get<ILocationMeasurment[]>(uri)
         .then(function (response: AxiosResponse<ILocationMeasurment[]>): void {
