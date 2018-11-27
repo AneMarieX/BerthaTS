@@ -25,7 +25,7 @@ function showAllLocations ():void{
           
             let result: string = "<ol>";
             response.data.forEach((loc: ILocationMeasurment) => {
-                result += "<li>" + loc.id+ loc.pressure + " " + loc.temperature+loc.humidity + "</li>" ;
+                result += "<li>"+"Location Id:"+loc.locationId+" , "+"Air Quality:"+loc.airCondition+" , "+"Location Temperature: "+loc.temperature+" , "+"Location Pressure: "+loc.pressure+" , "+ "Location Humidity: "+loc.humidity+" , "+"Location Name: "+loc.location+" , "+"Date: "+loc.date+ "</li>" ;
             });
             result += "</ol>";
             outputElement.innerHTML = result;

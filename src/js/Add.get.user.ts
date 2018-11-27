@@ -6,8 +6,8 @@ import { IUserMeasurment, IUser, ILocationMeasurment, ILocation, IPiResult } fro
 
  
 
-let buttonElement1: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllUsers");
-buttonElement1.addEventListener("click", showAllUsers);
+let buttonElement: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllUsers");
+buttonElement.addEventListener("click", showAllUsers);
 
 
 
@@ -26,7 +26,8 @@ function showAllUsers(): void {
           
             let result: string = "<ol>";
             response.data.forEach((user: IUser) => {
-                result += "<li>" + user.id + " " + user.login  +user.password +user.dateOfBirth+user.height+user.waight+"</li>" ;
+                result += "<li>" + "Login:" + user.login+" , "+"Password:"+user.password+" , "+"User Height:"+user.height+" , "+"User weight:"+user.weight+" , "+"User DateOfBirth:"+user.dateOfBirth+","+"User Measurement:"+user.UserMeasurement
+            +"</li>" ;
             });
             result += "</ol>";
          outputElement.innerHTML= result;
@@ -45,20 +46,20 @@ function showAllUsers(): void {
 
 
 
+//Antonio, aici jos ai codul de adaugat.
 
+function addUser(): void {
+    let addPresureElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addPresure");
+    let addPulseElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addPulse");
+    let addTempElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addTemp");
+    let addLocationElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addLocation");
+    let myPresure: number =  Number(addPresureElement.value);
+    let myPulse: number =  Number(addPulseElement.value);
+    let myTemp: number = Number(addTempElement.value);
+    let myLoc: number = Number(addLocationElement.value);
 
-// function addUser(): void {
-//     let addPresureElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addPresure");
-//     let addPulseElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addPulse");
-//     let addTempElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addTemp");
-//     let addLocationElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addLocation");
-//     let myPresure: number =  Number(addPresureElement.value);
-//     let myPulse: number =  Number(addPulseElement.value);
-//     let myTemp: number = Number(addTempElement.value);
-//     let myLoc: number = Number(addLocationElement.value);
-
-//     let uri: string = "https://berthawebap20181108065629.azurewebsites.net/Api/Users";
-//     axios.post<IUser>(uri, { pulse: myPulse, pressure: myPresure, temp: myTemp, location: myLoc })
-//         .then((response: AxiosResponse) => { console.log("response " + response.status + " " + response.statusText); })
-//         .catch((error: AxiosError) => { console.log(error); });
-// }
+    let uri: string = "https://berthawebap20181108065629.azurewebsites.net/Api/Users";
+    axios.post<IUser>(uri, { pulse: myPulse, pressure: myPresure, temp: myTemp, location: myLoc })
+        .then((response: AxiosResponse) => { console.log("response " + response.status + " " + response.statusText); })
+        .catch((error: AxiosError) => { console.log(error); });
+}

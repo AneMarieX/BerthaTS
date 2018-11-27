@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/Add.get.pi.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/Add.get.Measure.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1981,10 +1981,10 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./src/js/Add.get.pi.ts":
-/*!******************************!*\
-  !*** ./src/js/Add.get.pi.ts ***!
-  \******************************/
+/***/ "./src/js/Add.get.Measure.ts":
+/*!***********************************!*\
+  !*** ./src/js/Add.get.Measure.ts ***!
+  \***********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1993,16 +1993,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/axios/index */ "./node_modules/axios/index.js");
 /* harmony import */ var _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0__);
 
-var buttonElement = document.getElementById("getAllAir");
-buttonElement.addEventListener("click", ShowAllAir);
-var outputElement = document.getElementById("ShowAllAir");
-function ShowAllAir() {
-    var uri = "https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
+var buttonElement4 = document.getElementById("getAllMeasure");
+buttonElement4.addEventListener("click", showAllMeasure);
+var outputElement = document.getElementById("showAllMeasure");
+function showAllMeasure() {
+    var uri = "https://berthawebap20181108065629.azurewebsites.net/Api/UsersMeasurments";
     _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get(uri)
         .then(function (response) {
         var result = "<ol>";
-        response.data.forEach(function (air) {
-            result += "<li>" + "Air Temperature:" + air.temperature + " , " + "Air Pressure: " + air.pressure + " , " + "Air Humidity: " + air.humidity + " , " + "Location: " + air.location + " , " + "Date: " + air.date + "</li>";
+        response.data.forEach(function (me) {
+            result += "<li>" + me.locationID + " , " + me.Date + " , " + "User Pulse:" + me.Pulse + "," + "User BP:" + me.BloodPressure + "," + "User Temp:" + me.Temperature + "," + me.location + "," + me.user + "</li>";
         });
         result += "</ol>";
         outputElement.innerHTML = result;
@@ -2021,4 +2021,4 @@ function ShowAllAir() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=AddGetPi.js.map
+//# sourceMappingURL=AddMeasure.js.map

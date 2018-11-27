@@ -23,10 +23,10 @@ function ShowAllAir ():void{
            
             let result: string = "<ol>";
             response.data.forEach((air: IPiResult) => {
-                result += "<li>" + air.id + " " + air.temperature + air.pressure  + air.humidity + "</li>";
+                result += "<li>" + "Air Temperature:" + air.temperature+" , " + "Air Pressure: "+ air.pressure+" , "+ "Air Humidity: "+ air.humidity+" , "+ "Location: "+air.location +" , " +"Date: "+air.date+ "</li>";
             });
             result += "</ol>";
-            outputElement.innerHTML= result;
+         outputElement.innerHTML= result;
 
         })
         .catch(function (error: AxiosError): void { 

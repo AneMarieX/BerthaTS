@@ -78,7 +78,8 @@ module.exports = {
     CookiesHandler: './src/js/CookiesHandler.ts',
     AddGetUser: './src/js/Add.get.user.ts',
     AddGetLocation:'./src/js/Add.get.location.ts',
-    AddGetPi:'./src/js/Add.get.pi.ts'
+    AddGetPi:'./src/js/Add.get.pi.ts',
+    AddMeasure:'./src/js/Add.get.Measure.ts'
   },
   output: {
     
