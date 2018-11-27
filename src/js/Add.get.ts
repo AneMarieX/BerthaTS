@@ -1,40 +1,9 @@
 import axios, {
     AxiosResponse,
     AxiosError} from "../../node_modules/axios/index";
-import { IUserMeasurment } from "./DBInterfaces";
-
-interface IUser {
-
-    id: number;
-    login: string;
-    password: string;
-    height:number;
-    waight:number;
-    dateOfBirth:number;
-    pressure: number;
-    pulse: number;
-    temp : number;
-}
-
- interface ILocationMeasurment {
-    id: number;
-    locationName: string;
-    airCondition: string;
-    temperature: number;
-    pressure: number;
-    humidity: number;
-    Date: Date;
-
-}
-
-interface ILocation {
-    id: number;
-    LocationName: string;
-    Coordinates: string;
-}
+import { IUserMeasurment, IUser, ILocationMeasurment, ILocation } from "./DBInterfaces";
 
 
- 
  
 
 let buttonElement: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllButton");
