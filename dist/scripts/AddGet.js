@@ -1993,8 +1993,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var buttonElement1 = document.getElementById("getAllUsers");
 buttonElement1.addEventListener("click", showAllUsers);
-// let buttonElement: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getAllAir");
-// buttonElement.addEventListener("click", ShowAllAir);
+var buttonElement = document.getElementById("getAllAir");
+buttonElement.addEventListener("click", ShowAllAir);
 // let buttonElement2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("ggetAllLoc");
 // buttonElement2.addEventListener("click", showAllLocations);
 var outputElement = document.getElementById("showAllUsers");
@@ -2005,7 +2005,7 @@ function showAllUsers() {
         .then(function (response) {
         var result = "<ol>";
         response.data.forEach(function (user) {
-            result += "<li>" + user.id + " " + user.login + "</li>";
+            result += "<li>" + user.id + " " + user.login + user.password + user.dateOfBirth + user.height + user.waight + "</li>";
         });
         result += "</ol>";
         outputElement.innerHTML = result;
@@ -2019,27 +2019,26 @@ function showAllUsers() {
         }
     });
 }
-// function ShowAllAir ():void{
-//     let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
-//     axios.get<IPiResult[]>(uri)
-//         .then(function (response: AxiosResponse<IPiResult[]>): void {
-//             let result: string = "<ol>";
-//             response.data.forEach((air: IPiResult) => {
-//                 result += "<li>" + air.id + " " + air.temperature + air.pressure  + air.humidity + "</li>";
-//             });
-//             result += "</ol>";
-//             console.log(response);
-//         let outputElement: HTMLDivElement = <HTMLDivElement>document.getElementById("ShowAllAir");
-//             outputElement.innerHTML =ShowAllAir;
-//         })
-//         .catch(function (error: AxiosError): void { 
-//             if (error.response) {
-//               error;
-//             } else {
-//                error;
-//             }
-//         });
-// }
+function ShowAllAir() {
+    var uri = "https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
+    _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get(uri)
+        .then(function (response) {
+        var result = "<ol>";
+        response.data.forEach(function (air) {
+            result += "<li>" + air.id + " " + air.temperature + air.pressure + air.humidity + "</li>";
+        });
+        result += "</ol>";
+        outputElement.innerHTML = result;
+    })
+        .catch(function (error) {
+        if (error.response) {
+            error;
+        }
+        else {
+            error;
+        }
+    });
+}
 // function showAllLocations ():void{
 //     let uri:string ="https://berthawebap20181108065629.azurewebsites.net/Api/LocationMeasurments";
 //     const newLocal = outputElement.innerHTML;
