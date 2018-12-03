@@ -1774,7 +1774,6 @@ module.exports = function (obj) {
   return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
 }
 
-
 function isBuffer (obj) {
   return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 }
@@ -2010,7 +2009,7 @@ function ShowAllAir() {
     })
         .catch(function (error) {
         if (error.response) {
-            error ;
+            error;
         }
         else {
             error;
