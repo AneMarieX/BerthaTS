@@ -2073,6 +2073,20 @@ function addUser() {
         .then(function (response) { console.log("response " + response.status + " " + response.statusText); })
         .catch(function (error) { console.log(error); });
 }
+function addResult() {
+    var addTempElement = document.getElementById("addTemp");
+    var addPresureElement = document.getElementById("addPresure");
+    var addPulseElement = document.getElementById("addHumidity");
+    var addLocationElement = document.getElementById("addLocation");
+    var myTemp = Number(addTempElement.value);
+    var myPresure = Number(addPresureElement.value);
+    var myHumidity = Number(addPulseElement.value);
+    var myLoc = Number(addLocationElement.value);
+    var uri = "https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
+    _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.post(uri, { temp: myTemp, pressure: myPresure, humidity: myHumidity, location: myLoc })
+        .then(function (response) { console.log("response " + response.status + " " + response.statusText); })
+        .catch(function (error) { console.log(error); });
+}
 
 
 /***/ })

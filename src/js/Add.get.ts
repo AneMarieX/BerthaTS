@@ -110,3 +110,19 @@ function addUser(): void {
         .then((response: AxiosResponse) => { console.log("response " + response.status + " " + response.statusText); })
         .catch((error: AxiosError) => { console.log(error); });
 }
+
+function addResult(): void {
+    let addTempElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addTemp");
+    let addPresureElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addPresure");
+    let addPulseElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addHumidity");
+    let addLocationElement: HTMLInputElement = <HTMLInputElement>document.getElementById("addLocation");
+    let myTemp: number = Number(addTempElement.value);
+    let myPresure: number =  Number(addPresureElement.value);
+    let myHumidity: number =  Number(addPulseElement.value);
+    let myLoc: number = Number(addLocationElement.value);
+
+    let uri: string = "https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
+    axios.post<IUser>(uri, {  temp: myTemp, pressure: myPresure, humidity: myHumidity, location: myLoc })
+        .then((response: AxiosResponse) => { console.log("response " + response.status + " " + response.statusText); })
+        .catch((error: AxiosError) => { console.log(error); });
+}

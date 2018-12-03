@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "jshint": "^2.9.6",
-    "password-hash": "^1.2.2"
+    "password-hash": "^1.2.2",
+    "run": "^1.4.0"
   }
 }
