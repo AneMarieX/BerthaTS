@@ -16,7 +16,7 @@ export interface ILocationMeasurment {
     airCondition:string;
     temperature: any;
     pressure: any;
-    humidity:any;
+    humidity: any;
     location:string;
     date: number;
    
