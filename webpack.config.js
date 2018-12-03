@@ -76,7 +76,10 @@ module.exports = {
    
     Interfaces: './src/js/DBInterfaces.ts', 
     CookiesHandler: './src/js/CookiesHandler.ts',
-    AddGet: './src/js/Add.get.ts'
+    AddGetUser: './src/js/Add.get.user.ts',
+    AddGetLocation:'./src/js/Add.get.location.ts',
+    AddGetPi:'./src/js/Add.get.pi.ts',
+    AddMeasure:'./src/js/Add.get.Measure.ts'
   },
   output: {
     

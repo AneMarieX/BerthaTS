@@ -4,29 +4,34 @@ export interface IUser {
     login: string;
     password: string;
     height:number;
-    waight:number;
+    weight:number;
     dateOfBirth:number;
+    UserMeasurement:IUserMeasurment;
   
 }
 
 export interface ILocationMeasurment {
-    id: number;
-    locationName: string;
-    airCondition: string;
-    temperature: number;
-    pressure: number;
-    humidity: number;
-    Date: Date;
+    
+    locationId: number;
+    airCondition:string;
+    temperature: any;
+    pressure: any;
+    humidity:any;
+    location:string;
+    date: number;
+   
 }
 
 export interface IUserMeasurment {
-    id: number;
+    
     UserID: number;
     locationID:number;
-    Date: Date;
+    Date: number;
     BloodPressure: number;
     Pulse: number;
     Temperature: number;
+    location:string;
+    user:string;
 
 }
 
@@ -39,7 +44,9 @@ export interface ILocation {
 export interface IPiResult{
 
     id: number;
-    temperature: number;
-    pressure: number;
-    humidity:number;
+    temperature: string;
+    pressure: string;
+    humidity:string;
+    location:string;
+    date: number;
 }
