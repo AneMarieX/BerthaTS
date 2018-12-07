@@ -73,10 +73,13 @@ module.exports = {
     })
   ],
   entry: {
-    Test: './src/js/Test.ts',
+   
     Interfaces: './src/js/DBInterfaces.ts', 
     CookiesHandler: './src/js/CookiesHandler.ts',
-    UserLogIn: './src/js/UserLogIn.ts'
+    AddGetUser: './src/js/Add.get.user.ts',
+    AddGetLocation:'./src/js/Add.get.location.ts',
+    AddGetPi:'./src/js/Add.get.pi.ts',
+    AddMeasure:'./src/js/Add.get.Measure.ts'
   },
   output: {
     
