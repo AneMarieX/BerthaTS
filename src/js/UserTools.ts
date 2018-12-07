@@ -57,7 +57,7 @@ export async function  getAllUsers() : Promise<IUser[]>{
         catch (error){
             console.log(error)
         }
-        console.log("getAllUsers method - inside")
+    console.log("getAllUsers method - inside")
    return localUserVar;
 }
 
