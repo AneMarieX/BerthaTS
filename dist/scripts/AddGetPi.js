@@ -2000,11 +2000,11 @@ function ShowAllAir() {
     var uri = "https://berthawebap20181108065629.azurewebsites.net/Api/PiResults";
     _node_modules_axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get(uri)
         .then(function (response) {
-        var result = "<ol>";
+        var result = '<table class="table"><thead class="thead-light"><tr> <th scope="col">Id</th>  <th scope="col">Humidity</th> <th scope="col">Pressure</th> <th scope="col">Temperature</th>  </tr></thead>';
         response.data.forEach(function (air) {
-            result += "<li>" + "Air Temperature:" + air.temperature + " , " + "Air Pressure: " + air.pressure + " , " + "Air Humidity: " + air.humidity + " , " + "Location: " + air.location + " , " + "Date: " + air.date + "</li>";
+            result += '<tbody> <tr> <th scope="row">' + air.id + '</th> <td>' + air.humidity + '</td> <td>' + air.pressure + '</td>    <td>' + air.temperature + '</td> </tr>   </tbody> ';
         });
-        result += "</ol>";
+        result += "</table>";
         outputElement.innerHTML = result;
     })
         .catch(function (error) {
